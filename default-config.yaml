@@ -1,16 +1,14 @@
-# Current version: 1.8.1
-
 gaps:
-  inner_gap: 1
-  outer_gap: 1
+  inner_gap: 20
+  outer_gap: 20
 
 bar:
   height: 30
   position: "top"
-  opacity: 0.9
+  opacity: 1.0
   background: "#101010"
   foreground: "white"
-  font_family: "IBM Plex Mono"
+  font_family: "Segoe UI"
   font_size: "13"
   padding: "1 6 1 6"
   components_left:
@@ -20,15 +18,15 @@ bar:
       default_workspace_background: "#101010"
   components_right:
     - type: "clock"
-      time_formatting: "dd MMM yyyy hh:mm tt "
+      time_formatting: "hh:mm tt  ddd MMM d"
 
 workspaces:
-  - name: 6
   - name: 1
   - name: 2
   - name: 3
   - name: 4
   - name: 5
+  - name: 6
   - name: 7
   - name: 8
   - name: 9
@@ -47,18 +45,6 @@ window_rules:
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
 
-  - command: "ignore"
-    match_process_name: "wezterm-gui"
-
-  - command: "ignore"
-    match_process_name: "openconsole"
-
-  - command: "ignore"
-    match_process_name: "pwsh"
-
-  - command: "ignore"
-    match_process_name: "wezterm"
-
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
@@ -72,13 +58,13 @@ keybindings:
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Control+H", "Alt+Control+Left"]
+    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
   - command: "move right"
-    bindings: ["Alt+Control+L", "Alt+Control+Right"]
+    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
   - command: "move up"
-    bindings: ["Alt+Control+K", "Alt+Control+Up"]
+    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
   - command: "move down"
-    bindings: ["Alt+Control+J", "Alt+Control+Down"]
+    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -92,17 +78,17 @@ keybindings:
 
   # Change layout direction to be either horizontal or vertical.
   - command: "layout horizontal"
-    binding: "Alt+Control+V"
+    binding: "Alt+Shift+V"
   - command: "layout vertical"
     binding: "Alt+V"
 
   # Change focus between floating / tiling windows.
   - command: "toggle focus mode"
-    binding: "Alt+Control+Space"
+    binding: "Alt+Space"
 
   # Change the focused window to be floating / tiling.
   - command: "toggle floating"
-    binding: "Alt+Control+F"
+    binding: "Alt+Shift+Space"
 
   # Change the focused window to be maximized / unmaximized.
   - command: "toggle maximized"
@@ -114,45 +100,57 @@ keybindings:
 
   # Close focused window.
   - command: "close"
-    binding: "Alt+Q"
+    binding: "Alt+Shift+Q"
 
   # Kill GlazeWM process safely.
   - command: "exit wm"
-    binding: "Alt+Control+Q"
+    binding: "Alt+Shift+E"
 
   # Re-evaluate configuration file.
   - command: "reload config"
-    binding: "Alt+Control+Z"
+    binding: "Alt+Shift+R"
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wezterm"
-    binding: "Alt+T"
+  - command: "exec cmd"
+    binding: "Alt+Enter"
 
   # Change focus to a workspace defined in `workspaces` config.
   - command: "focus workspace 1"
     binding: "Alt+W"
   - command: "focus workspace 2"
-    binding: "Alt+E"
-  - command: "focus workspace 3"
-    binding: "Alt+R"
-  - command: "focus workspace 4"
-    binding: "Alt+1"
-  - command: "focus workspace 5"
     binding: "Alt+2"
-  - command: "focus workspace 6"
+  - command: "focus workspace 3"
     binding: "Alt+3"
+  - command: "focus workspace 4"
+    binding: "Alt+4"
+  - command: "focus workspace 5"
+    binding: "Alt+5"
+  - command: "focus workspace 6"
+    binding: "Alt+6"
+  - command: "focus workspace 7"
+    binding: "Alt+7"
+  - command: "focus workspace 8"
+    binding: "Alt+8"
+  - command: "focus workspace 9"
+    binding: "Alt+9"
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
-    binding: "Alt+Control+W"
+    binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
-    binding: "Alt+Control+E"
+    binding: "Alt+Shift+2"
   - commands: ["move to workspace 3", "focus workspace 3"]
-    binding: "Alt+Control+R"
+    binding: "Alt+Shift+3"
   - commands: ["move to workspace 4", "focus workspace 4"]
-    binding: "Alt+Control+1"
+    binding: "Alt+Shift+4"
   - commands: ["move to workspace 5", "focus workspace 5"]
-    binding: "Alt+Control+2"
+    binding: "Alt+Shift+5"
   - commands: ["move to workspace 6", "focus workspace 6"]
-    binding: "Alt+Control+3"
+    binding: "Alt+Shift+6"
+  - commands: ["move to workspace 7", "focus workspace 7"]
+    binding: "Alt+Shift+7"
+  - commands: ["move to workspace 8", "focus workspace 8"]
+    binding: "Alt+Shift+8"
+  - commands: ["move to workspace 9", "focus workspace 9"]
+    bindings: ["Alt+Shift+9"]
