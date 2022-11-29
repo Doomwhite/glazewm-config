@@ -24,9 +24,14 @@ bar:
 
 workspaces:
   - name: 6
+    display_name: "Second Monitor"
+    bind_to_monitor: 1
   - name: 1
+    display_name: "Browser"
   - name: 2
+    display_name: "APP"
   - name: 3
+    display_name: "API"
   - name: 4
   - name: 5
   - name: 7
@@ -36,8 +41,8 @@ workspaces:
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
-  - command: "ignore"
-    match_process_name: "Taskmgr"
+  #- command: "ignore"
+  #  match_process_name: "Taskmgr"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -126,10 +131,14 @@ keybindings:
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wezterm"
-    binding: "Alt+T"
+  # - command: "exec wezterm"
+  # binding: "Alt+T"
 
   # Change focus to a workspace defined in `workspaces` config.
+  - command: "focus workspace next"
+    binding: "Alt+D"
+  - command: "focus workspace prev"
+    binding: "Alt+Shift+D"
   - command: "focus workspace 1"
     binding: "Alt+W"
   - command: "focus workspace 2"
